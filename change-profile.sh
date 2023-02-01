@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Name of the profile to use
-profile='Frappe'
+profile='Latte'
 
 
 # Check if system theme is dark
 if [ "$(defaults read -g AppleInterfaceStyle)" == "Dark" ]; then
     # If dark, use dark profile
-profile='Latte'
+profile='Frappe'
 fi
 
 # Set the default profile

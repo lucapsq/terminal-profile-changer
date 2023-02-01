@@ -11,6 +11,16 @@ if [ "$action" == "r" ]; then
     sudo rm "/Users/$USER/Library/LaunchAgents/com.lucapsq.change-profile.plist"
     sudo rm "/Users/$USER/Library/LaunchAgents/change-profile.sh"
   fi
+  defaults write com.apple.Terminal "Default Window Settings" -string "Basic"
+  defaults write com.apple.Terminal "Startup Window Settings" -string "Basic"
+  osascript <<EOF
+  if application "Terminal" is running then
+      tell application "Terminal"
+          set current settings of tabs of windows to settings set "Basic"
+      end tell
+  end if
+EOF
+  
   echo "Removed."
   exit 0
 fi
