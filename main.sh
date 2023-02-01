@@ -43,7 +43,15 @@ sed "10s/.*/profile='$darkProfileName'/" change-profile.sh > change-profile.tmp 
 
 launchAgentsDir="/Users/$USER/Library/LaunchAgents/"
 
+
 sudo chmod +x "com.lucapsq.change-profile.plist" "change-profile.sh"
+
+process_name="com.lucapsq.change-profile"
+
+if launchctl list | grep "$process_name" > /dev/null; then
+  launchctl remove "$process_name"
+fi
+
 
 sudo cp com.lucapsq.change-profile.plist change-profile.sh "$launchAgentsDir"
 
