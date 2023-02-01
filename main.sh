@@ -1,9 +1,6 @@
 #!/bin/bash
 
-repo_url="https://github.com/bouk/dark-mode-notify"
 
-echo "Cloning repository from $repo_url"
-git clone $repo_url
 cd dark-mode-notify
 sudo make install
 
@@ -39,8 +36,9 @@ echo "$plist" > "com.lucapsq.change-profile.plist"
 
 
 
-sed "4s/.*/profile='$lightProfileName'/" esempio.sh > esempio.tmp && mv esempio.tmp esempio.sh
-sed "10s/.*/profile='$darkProfileName'/" esempio.sh > esempio.tmp && mv esempio.tmp esempio.sh
+sed "4s/.*/profile='$lightProfileName'/" change-profile.sh > change-profile.tmp && mv change-profile.tmp change-profile.sh
+sed "10s/.*/profile='$darkProfileName'/" change-profile.sh > change-profile.tmp && mv change-profile.tmp change-profile.sh
+
 
 
 echo "Done."
