@@ -10,7 +10,7 @@
     <key>ProgramArguments</key>
     <array>
        <string>/usr/local/bin/dark-mode-notify</string>
-       <string>/Users/lucap/Library/LaunchAgents/change_theme.sh</string>
+       <string>/Users/lucap/Library/LaunchAgents/change-profile.sh</string>
     </array>
 </dict>
 </plist>
